@@ -1,0 +1,241 @@
+---
+name: Liquid Specular
+colors:
+  surface: '#111319'
+  surface-dim: '#111319'
+  surface-bright: '#373940'
+  surface-container-lowest: '#0c0e14'
+  surface-container-low: '#191b22'
+  surface-container: '#1e1f26'
+  surface-container-high: '#282a30'
+  surface-container-highest: '#33343b'
+  on-surface: '#e2e2eb'
+  on-surface-variant: '#c1c6d7'
+  inverse-surface: '#e2e2eb'
+  inverse-on-surface: '#2e3037'
+  outline: '#8b90a0'
+  outline-variant: '#414755'
+  surface-tint: '#adc6ff'
+  primary: '#adc6ff'
+  on-primary: '#002e69'
+  primary-container: '#4b8eff'
+  on-primary-container: '#00285c'
+  inverse-primary: '#005bc1'
+  secondary: '#c2c1ff'
+  on-secondary: '#1800a7'
+  secondary-container: '#3630bf'
+  on-secondary-container: '#b1b1ff'
+  tertiary: '#47e266'
+  on-tertiary: '#003910'
+  tertiary-container: '#00a73e'
+  on-tertiary-container: '#00320d'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
+  primary-fixed: '#d8e2ff'
+  primary-fixed-dim: '#adc6ff'
+  on-primary-fixed: '#001a41'
+  on-primary-fixed-variant: '#004493'
+  secondary-fixed: '#e2dfff'
+  secondary-fixed-dim: '#c2c1ff'
+  on-secondary-fixed: '#0c006b'
+  on-secondary-fixed-variant: '#332dbc'
+  tertiary-fixed: '#6cff82'
+  tertiary-fixed-dim: '#47e266'
+  on-tertiary-fixed: '#002106'
+  on-tertiary-fixed-variant: '#00531a'
+  background: '#111319'
+  on-background: '#e2e2eb'
+  surface-variant: '#33343b'
+typography:
+  display-hero:
+    fontFamily: Inter
+    fontSize: 56px
+    fontWeight: '700'
+    lineHeight: 64px
+    letterSpacing: -0.03em
+  display-hero-mobile:
+    fontFamily: Inter
+    fontSize: 36px
+    fontWeight: '700'
+    lineHeight: 44px
+    letterSpacing: -0.025em
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 40px
+    fontWeight: '600'
+    lineHeight: 48px
+    letterSpacing: -0.025em
+  headline-lg-mobile:
+    fontFamily: Inter
+    fontSize: 28px
+    fontWeight: '600'
+    lineHeight: 36px
+    letterSpacing: -0.02em
+  headline-md:
+    fontFamily: Inter
+    fontSize: 28px
+    fontWeight: '600'
+    lineHeight: 36px
+    letterSpacing: -0.02em
+  headline-sm:
+    fontFamily: Inter
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 28px
+    letterSpacing: -0.015em
+  body-lg:
+    fontFamily: Inter
+    fontSize: 17px
+    fontWeight: '400'
+    lineHeight: 24px
+    letterSpacing: -0.01em
+  body-md:
+    fontFamily: Inter
+    fontSize: 15px
+    fontWeight: '400'
+    lineHeight: 22px
+    letterSpacing: -0.005em
+  body-sm:
+    fontFamily: Inter
+    fontSize: 13px
+    fontWeight: '400'
+    lineHeight: 18px
+    letterSpacing: 0em
+  label-lg:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '500'
+    lineHeight: 20px
+    letterSpacing: -0.005em
+  label-md:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '500'
+    lineHeight: 16px
+    letterSpacing: 0.01em
+  label-sm:
+    fontFamily: Inter
+    fontSize: 11px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.04em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1.25rem
+  gutter-desktop: 1.5rem
+  margin: 1rem
+  margin-tablet: 2rem
+  margin-desktop: 3rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system channels the refined optical tactility of modern Apple platforms (macOS Sonoma and iOS 17/18), prioritizing optic depth, real-time spatial awareness, and pristine clarity. It merges high-fidelity glassmorphism with minimalist discipline to create an atmospheric, responsive interface.
+
+### Brand Personality & Emotional Profile
+- **Translucent & Dimensional:** The interface feels like sculpted, polished silicate layers suspended over fluid physical backgrounds.
+- **Precise & Restrained:** Every element operates with mathematical discipline, eliminating superfluous noise in favor of pristine typographic and material cadence.
+- **Fluid & Responsive:** Elements respond instantly with subtle optical refraction, smooth scale shifts, and simulated physical mass.
+- **Sensory Target:** Cultivates calm mastery, focused efficiency, and premium tactile delight.
+
+### Visual Style
+A tailored hybrid of **Liquid Glassmorphism** and **Refined Modern Minimalism**. Surfaces avoid flat opaque fills, instead relying on multi-layer backdrop blurs, directional specular highlights, and calibrated refractive border strokes that register light along edges.
+
+## Colors
+
+The palette employs deep optical backdrops paired with chromatic luminous accents. Color serves purely as spatial punctuation and state communication.
+
+### Palette Architecture
+- **Primary (Apple Azure - `#007AFF`):** Direct action items, primary interactive states, and active visual focus.
+- **Secondary (Electric Indigo - `#5E5CE6`):** Secondary affordances, progressive disclosures, and expressive transitions.
+- **Tertiary (Mint Green - `#30D158`):** Success indicators, validated flows, and organic status markers.
+- **Accent Alert (Coral Crimson - `#FF453A`):** Destructive actions, system alerts, and critical state warnings.
+- **Neutral (Obsidian Depth - `#0F1117`):** The foundational substrate from which layered frosted planes emerge.
+
+### Surface System (Liquid Glass Stack)
+- **Base Canvas:** Deep obsidian space tint (`#07080B` to `#0F1117`).
+- **Glass Base (Layer 0):** `rgba(255, 255, 255, 0.03)` with `backdrop-filter: blur(40px) saturate(190%)`.
+- **Glass Floating (Layer 1):** `rgba(255, 255, 255, 0.07)` with `backdrop-filter: blur(50px) saturate(200%)`.
+- **Glass Elevated (Layer 2):** `rgba(255, 255, 255, 0.12)` with `backdrop-filter: blur(60px) saturate(210%)`.
+- **Specular Border Strokes:** Top and leading edge: `linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.0) 100%)`. Bottom and trailing edge: `rgba(255, 255, 255, 0.04)`.
+
+## Typography
+
+Inter serves as the typographic engine across all touchpoints, calibrated to mirror Apple's system typography through strict tracking adjustments and vertical alignments.
+
+### Typographic Principles
+- **Optical Tracking:** Larger weights feature negative tracking (`-0.03em` to `-0.015em`) to simulate compact title lockups. Micro-labels and status indicators use positive tracking (`+0.01em` to `+0.04em`) to ensure legibility on translucent glass textures.
+- **Legibility Over Diffusion:** When text sits directly over semi-transparent backdrops, avoid pure white (`#FFFFFF`) in body sizes to prevent bloom. Use `rgba(255, 255, 255, 0.92)` for high-contrast primary text, `rgba(255, 255, 255, 0.64)` for secondary text, and `rgba(255, 255, 255, 0.40)` for disabled or placeholder states.
+
+## Layout & Spacing
+
+The layout model utilizes a fluid 12-column structural grid on desktop, scaling to 8 columns on tablet and 4 columns on mobile, supported by a 4px/8px incremental spacing rhythm.
+
+### Grid & Breakpoints
+- **Mobile (< 768px):** 4 columns, `margin: 1rem`, `gutter: 1.25rem`. Full-width modular card stacks with inner gutters for edge alignment.
+- **Tablet (768px – 1024px):** 8 columns, `margin-tablet: 2rem`, `gutter: 1.25rem`. Split-pane structures and multi-column floating segments.
+- **Desktop (> 1024px):** 12 columns, `margin-desktop: 3rem`, `gutter-desktop: 1.5rem`. Fluid max-container width pinned at `1440px` with expansive outer clearance.
+
+### Spatial Relationships
+Cards and floating panels require breathing room: elements floating atop ambient backdrops maintain a minimum margin of `space-md` (`1rem`) to keep the specular border edges distinct from adjacent containers.
+
+## Elevation & Depth
+
+Visual hierarchy is constructed through light transport and glass refraction rather than heavy drop shadows. Surfaces reflect and transmit underlying hues while casting subtle spatial ambient silhouettes.
+
+### The Specular Ridge
+Every glass surface incorporates an inner directional highlight simulating light striking a polished bevel:
+- **Inner Reflection:** `inset 0 1px 1px 0 rgba(255, 255, 255, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.08)`.
+- **Light Source Direction:** Universal top-to-bottom illumination at 90°.
+
+### Ambient Grounding
+Cast shadows remain widely diffused, tinted with deep ambient slate to prevent dirty black fringes:
+- **Level 1 (Docked/Subtle Card):** `0 8px 24px -4px rgba(0, 0, 0, 0.28)`.
+- **Level 2 (Floating Popover/Modal):** `0 16px 36px -6px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.1)`.
+- **Level 3 (Dragged/Active State):** `0 24px 48px -8px rgba(0, 0, 0, 0.48), 0 0 12px 0 rgba(0, 122, 255, 0.2)`.
+
+## Shapes
+
+The design system adopts smooth, continuous squircle curves (`roundedness: 2`, starting at `0.5rem` / `8px` up to `1.5rem` / `24px` on cards) to maintain natural organic contours matching Apple's hardware radii.
+
+### Curvature Hierarchies
+- **Controls & Chips:** `0.5rem` (`8px`) or fully rounded pill styles where continuous action indicates status.
+- **Small Containers & Inputs:** `0.75rem` (`12px`).
+- **Cards & Modals:** `1rem` (`16px`) to `1.5rem` (`24px`). Outer surface corner radii match internal nested elements (`radius_inner = radius_outer - padding`) to ensure visual harmony.
+
+## Components
+
+### Buttons
+- **Primary:** Apple Azure solid tint with a linear specular top glaze (`rgba(255, 255, 255, 0.2)` to transparent). Font weight `600`. Scale transforms to `0.97` on active press with instantaneous spring recovery to simulate haptic depth.
+- **Secondary (Glass Fill):** `backdrop-filter: blur(20px)`, surface fill `rgba(255, 255, 255, 0.08)`, border `1px solid rgba(255, 255, 255, 0.15)`. Text color `rgba(255, 255, 255, 0.9)`.
+- **Destructive:** Coral Crimson glass wash with tinted border (`rgba(255, 69, 58, 0.3)`).
+
+### Input Fields
+- **Container:** Recessed obsidian well: `background: rgba(0, 0, 0, 0.2)`, `border: 1px solid rgba(255, 255, 255, 0.08)`. Corner radius `0.75rem`.
+- **Focus State:** Subtle electric aura `box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.35)`, border switches to `#007AFF`.
+
+### Cards & Panels
+- Translucent backdrop layer with `backdrop-filter: blur(40px) saturate(190%)`. Top highlight bevel (`inset 0 1px 0 0 rgba(255, 255, 255, 0.3)`). Card header text sits directly on the glass with negative tracking for clarity.
+
+### Chips & Filter Tags
+- Compact height (`28px`), pill-curved (`9999px`), frosted base `rgba(255, 255, 255, 0.06)`. Selected state activates Azure tint with `rgba(0, 122, 255, 0.25)` background and `1px solid rgba(0, 122, 255, 0.6)`.
+
+### Lists & Grouped Tables
+- macOS/iOS inset grouped appearance. Discrete rows separated by translucent hairpins (`1px solid rgba(255, 255, 255, 0.06)`) that inset `1rem` from leading text. Hover states trigger a subtle localized luminescent wash (`rgba(255, 255, 255, 0.04)`).
+
+### Checkboxes & Switches
+- **Switches:** Tactile toggle base using high-contrast tracking pills (`50px x 30px`). Inactive state is muted charcoal glass; active toggles to luminous Mint Green or Azure. The thumb is an elevated high-specular white disc casting a sharp directional drop shadow.
+- **Checkboxes:** Squared squircles (`6px` radius). Active fill features an inner white check glyph centered with a high-clarity drop-in animation.

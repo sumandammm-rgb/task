@@ -1,0 +1,183 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Liquid Specular Tokens */
+  --ls-canvas-deep: #07080B;
+  --ls-surface: #111319;
+  --ls-on-surface: rgba(255, 255, 255, 0.92);
+  --ls-on-surface-secondary: rgba(255, 255, 255, 0.64);
+  --ls-on-surface-muted: rgba(255, 255, 255, 0.40);
+
+  /* Live Accent (default Apple Azure) */
+  --ls-accent: #007AFF;
+  --ls-accent-soft: rgba(0, 122, 255, 0.22);
+  --ls-accent-border: rgba(0, 122, 255, 0.55);
+  --ls-accent-glow: rgba(0, 122, 255, 0.35);
+  --ls-accent-text: #adc6ff;
+
+  /* Semantic Accents */
+  --ls-indigo: #5E5CE6;
+  --ls-mint: #30D158;
+  --ls-crimson: #FF453A;
+
+  /* Glass Intensity Multipliers (updated via Preferences) */
+  --ls-blur-l0: 40px;
+  --ls-blur-l1: 50px;
+  --ls-blur-l2: 60px;
+  --ls-sat-l0: 190%;
+  --ls-sat-l1: 200%;
+  --ls-sat-l2: 210%;
+  --ls-specular-opacity: 0.35;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--ls-canvas-deep);
+    color: var(--ls-on-surface);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Liquid Specular Surface Layers */
+.glass-layer-0 {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(var(--ls-blur-l0)) saturate(var(--ls-sat-l0));
+  -webkit-backdrop-filter: blur(var(--ls-blur-l0)) saturate(var(--ls-sat-l0));
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, calc(var(--ls-specular-opacity) * 0.7)),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 8px 24px -4px rgba(0, 0, 0, 0.28);
+}
+
+.glass-layer-1 {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(var(--ls-blur-l1)) saturate(var(--ls-sat-l1));
+  -webkit-backdrop-filter: blur(var(--ls-blur-l1)) saturate(var(--ls-sat-l1));
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, var(--ls-specular-opacity)),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.09),
+    0 12px 32px -6px rgba(0, 0, 0, 0.34);
+}
+
+.glass-layer-2 {
+  background: rgba(24, 27, 36, 0.72);
+  backdrop-filter: blur(var(--ls-blur-l2)) saturate(var(--ls-sat-l2));
+  -webkit-backdrop-filter: blur(var(--ls-blur-l2)) saturate(var(--ls-sat-l2));
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, calc(var(--ls-specular-opacity) + 0.05)),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 24px 48px -8px rgba(0, 0, 0, 0.55);
+}
+
+/* Refractive Top-Leading Highlight Border Overlay */
+.specular-edge {
+  position: relative;
+}
+
+.specular-edge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, var(--ls-specular-opacity)) 0%,
+    rgba(255, 255, 255, 0.06) 48%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Recessed Obsidian Well Input */
+.obsidian-well {
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+  transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.obsidian-well:focus-within,
+.obsidian-well:focus {
+  outline: none;
+  border-color: var(--ls-accent);
+  box-shadow: 0 0 0 3px var(--ls-accent-glow), inset 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* Primary Specular Button */
+.btn-specular-primary {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 100%), var(--ls-accent);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.35),
+    0 6px 16px -4px var(--ls-accent-glow);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), filter 140ms ease, box-shadow 140ms ease;
+}
+
+.btn-specular-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-specular-primary:active {
+  transform: scale(0.97);
+}
+
+/* Secondary Glass Button */
+.btn-glass-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), background-color 140ms ease;
+}
+
+.btn-glass-secondary:hover {
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.btn-glass-secondary:active {
+  transform: scale(0.97);
+}
+
+/* Destructive Glass Button */
+.btn-glass-destructive {
+  background: rgba(255, 69, 58, 0.14);
+  border: 1px solid rgba(255, 69, 58, 0.32);
+  color: #ffb4ab;
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), background-color 140ms ease;
+}
+
+.btn-glass-destructive:hover {
+  background: rgba(255, 69, 58, 0.24);
+}
+
+.btn-glass-destructive:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Solstice Studio",
+  "description": "A multi-screen spatial workspace and focus studio built with the Liquid Specular glassmorphism design system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
